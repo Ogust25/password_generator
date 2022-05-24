@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#range{
+    background: linear-gradient(to right, #FEF9ED 0%, #FDD881 50%, #3D3A49 50%, #3D3A49 100%);
+    transition: background 450ms ease-in;
+}

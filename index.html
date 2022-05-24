@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <!-- Links -->
+    <link rel="shortcut icon" href="./assets/images/password_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-gradient-bg-l to-gradient-bg-r w-screen h-screen sm:flex sm:flex-col sm:justify-center sm:items-center">
+    <div class="font-outfit bg-phone bg-no-repeat bg-cover w-full h-full sm:bg-tablet sm:w-11/12 sm:my-8 lg:my-16 sm:rounded-xl">
+
+        <!-- Title -->
+        <header class="flex items-center justify-around p-5 text-yellow-custom sm:justify-center">
+            <img src="./assets/images/password_logo.png" alt="logo password">
+            <h1 class="text-2xl font-medium drop-shadow-title sm:ml-5 lg:text-5xl">Password Generator</h1>
+        </header>
+
+        <main class="mt-5 flex flex-col items-center sm:mt-10">
+            <!-- Length -->
+            <section class="w-full flex flex-col items-center sm:justify-between sm:w-5/6 lg:w-5/12 sm:flex-row">
+                <div class="w-11/12 flex flex-col items-center">
+                    <div class="flex text-yellow-custom w-full items-center">
+                        <img src="./assets/images/regle_logo.png" alt="logo regle">
+                        <h2 class="text-lg ml-3">Password length</h2>
+                    </div>
+                    <div class="flex justify-between w-full my-5 items-center">
+                        <div class="bg-nbr-bg text-orange-50 border-2 border-info-txt text-sm px-3 py-1 rounded-md" id="rangeNbr">11</div>
+                        <input min="4" max="20" value="12" class="w-full ml-5 accent-yellow-custom cursor-pointer border-none appearance-none h-2 rounded-full outline-none hover:accent-active" type="range" id="range">
+                    </div>
+                </div>
+                <div class="flex items-center bg-info-bg w-11/12 sm:w-5/6 lg:w-5/12 px-5 py-2 rounded-lg mb-8 sm:ml-10">
+                    <img src="./assets/images/info_logo.png" alt="logo info">
+                    <p class="text-info-txt text-xs ml-3">In France, ANSSI recommends a minimum length of 12 characters</p>
+                </div>
+            </section>
+
+            <!-- Options -->
+            <section class="w-full flex flex-col items-center sm:mt-10">
+                <div class="flex text-yellow-custom w-11/12 sm:w-5/6 lg:w-5/12 items-center">
+                    <img src="./assets/images/tool_logo.png" alt="logo tools">
+                    <h2 class="text-lg ml-3">Password options</h2>
+                </div>
+                <div class="flex my-5 sm:w-5/6 lg:w-5/12 sm:justify-between">
+                    <div class="mr-5">
+                        <div class="flex items-center mb-5">
+                            <input class="bg-no-repeat float-left bg-center bg-contain align-top    transition duration-200 mr-2 mt-1 focus:outline-none checked:bg-yellow-custom checked:border-none cursor-pointer border border-info-txt rounded-sm h-5 w-5 appearance-none hover:border-active hover:checked:bg-active" type="checkbox" name="uppercase" id="uppercase">
+                            <label class="text-orange-50" for="uppercase">uppercase</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input class="bg-no-repeat float-left bg-center bg-contain align-top    transition duration-200 mr-2 mt-1 focus:outline-none checked:bg-yellow-custom checked:border-none cursor-pointer border border-info-txt rounded-sm h-5 w-5 appearance-none hover:border-active hover:checked:bg-active" type="checkbox" name="numbers" id="numbers">
+                            <label class="text-orange-50" for="numbers">numbers</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div  class="flex items-center mb-5">
+                            <input class="bg-no-repeat float-left bg-center bg-contain align-top    transition duration-200 mr-2 mt-1 focus:outline-none checked:bg-yellow-custom checked:border-none cursor-pointer border border-info-txt rounded-sm h-5 w-5 appearance-none hover:border-active hover:checked:bg-active" type="checkbox" name="lowercase" id="lowercase">
+                            <label class="text-orange-50" for="lowercase">lowercase</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input class="bg-no-repeat float-left bg-center bg-contain align-top    transition duration-200 mr-2 mt-1 focus:outline-none checked:bg-yellow-custom checked:border-none cursor-pointer border border-info-txt rounded-sm h-5 w-5 appearance-none hover:border-active hover:checked:bg-active" type="checkbox" name="speCharacters" id="speCharacters">
+                            <label class="text-orange-50" for="speCharacters">special characters</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center bg-info-bg w-11/12 sm:w-5/6 lg:w-5/12 px-5 py-2 rounded-lg">
+                    <img src="./assets/images/info_logo.png" alt="logo info">
+                    <p class="text-info-txt text-xs ml-3">In France, ANSSI recommends a password including upper and lower case letters, numbers and special characters</p>
+                </div>
+            </section>
+
+            <!-- Btn generate -->
+            <div class="flex justify-center mb-3 mt-8 sm:mt-16 sm:mb-6">
+                <button class="shadow-2xl text-sm font-bold bg-gradient-to-r from-gradient-l to-gradient-r rounded-lg py-2 px-5 hover:from-active hover:to-active" id="generate">Generate password</button>
+            </div>
+
+            <!-- Input password -->
+            <div class="flex rounded-lg justify-center sm:mb-6">
+                <input class="p-3 placeholder:text-yellow-custom text-yellow-custom bg-input placeholder:text-sm rounded-tl-lg rounded-bl-lg" type="text" placeholder="New password here" id="inputPassword">
+                <button class="shadow-2xl bg-gradient-to-r from-gradient-l to-gradient-r flex rounded-tr-lg rounded-br-lg justify-center items-center py-3 px-5 hover:from-active hover:to-active" id="copy">
+                    <img src="./assets/images/copy_logo.png" alt="logo copy">
+                </button>
+            </div>
+
+            <!-- Succes message -->
+            <div class="invisible flex justify-center w-full mt-2" id="succesMsg">
+                <div class="bg-input rounded-lg py-2 px-5">
+                    <p class="font-bold text-yellow-custom">Successfully copied !</p>
+                </div>
+            </div>
+        </main>
+    </div>
+<script src="./js/script.js"></script>
+</body>
+</html>
