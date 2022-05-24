@@ -23,7 +23,7 @@ range.oninput = function() {
 
 
 /* 4 checkboxs */
-let uppercase = 0;
+let uppercase = 1;
 checkUppercase.onchange = function() {
     if(checkUppercase.checked){
         uppercase = 1;
@@ -32,7 +32,7 @@ checkUppercase.onchange = function() {
     }
 };
 
-let lowercase = 0;
+let lowercase = 1;
 checkLowercase.onchange = function() {
     if(checkLowercase.checked){
         lowercase = 1;
@@ -41,7 +41,7 @@ checkLowercase.onchange = function() {
     }
 };
 
-let numbers = 0;
+let numbers = 1;
 checkNumbers.onchange = function() {
     if(checkNumbers.checked){
         numbers = 1;
